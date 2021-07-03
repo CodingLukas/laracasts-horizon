@@ -32,6 +32,8 @@ class SomeJob implements ShouldQueue
     {
         sleep(2);
         Log::info('Job Complete with User ID: '. $this->user->id);
+
+        throw new \Exception('There was an error');
     }
 
     public function tags()
